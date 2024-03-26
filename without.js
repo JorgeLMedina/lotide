@@ -27,7 +27,7 @@ const without = function (source, itemsToRemove) {
       newArr.push(element);
     }
   }
-  console.log(newArr);
+  return newArr;
 };
 
 without([1, 2, 3], [1]);
