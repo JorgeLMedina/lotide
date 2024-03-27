@@ -30,4 +30,5 @@ assertEqual(tail(words)[0], "Lighthouse");
 assertEqual(tail(words)[1], "Labs");
 assertEqual(tail(none)[0], undefined);
 assertEqual(tail(empty)[0], undefined);
+assertEqual(tail(empty).length, 0);
 assertEqual(words.length, 3);
