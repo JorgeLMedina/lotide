@@ -27,7 +27,7 @@ const middle = function (newArr) {
   } else if (arrLength % 2 !== 0) {
     return [newArr[Math.floor(arrLength / 2)]];
   } else {
-    return [newArr[Math.floor(arrLength / 2 - 1)], newArr[Math.floor(arrLength / 2)]];
+    return [newArr[arrLength / 2 - 1], newArr[arrLength / 2]];
   }
 };
 
