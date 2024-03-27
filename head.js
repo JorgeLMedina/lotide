@@ -1,7 +1,9 @@
+// This function returns the first element of an array
 const head = function (arr) {
   return arr[0];
 };
 
+// This function compares 2 values and prints out if they are or not equivalent
 const assertEqual = function (actual, expected) {
   if (actual !== expected) {
     console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
