@@ -7,47 +7,6 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-/* const countLetters = function (string) {
-  const count = {};
-  for (const letter of string) {
-    console.log(letter);
-    let upperChar = letter.toUpperCase();
-    console.log(upperChar);
-        if (count[upperChar]) {
-          count[upperChar]++
-        } else if (!count[upperChar]) {
-          count[upperChar] = 1;
-        } else if (count[letter]) {
-          count[letter] += 1;
-        } else {
-          count[letter] = 1;
-        }
-  }
-  return count;
-}; */
-
-// countLetters("Lighthouse in the house");
-
-/* const countLetters = function (string) {
-  const count = {};
-  for (const letter of string) {
-    if (letter === letter.toUpperCase()) {
-      if (count[letter]) {
-        count[letter.toUpperCase()] += 1;
-      } else {
-        count[letter.toUpperCase()] = 1;
-      }
-    } else {
-      if (count[letter]) {
-        count[letter] += 1;
-      } else {
-        count[letter] = 1;
-      }
-      return count;
-    };
-  }
-}; */
-
 const countLetters = function (string) {
   const count = {};
   for (const letter of string) {
@@ -62,7 +21,7 @@ const countLetters = function (string) {
   return count;
 };
 
-
+// Test cases for lower case-only strings
 const countLettersObj = countLetters("lighthouse in the house");
 
 assertEqual(countLettersObj["h"], 4);
@@ -73,6 +32,7 @@ assertEqual(countLettersObj["o"], 1);
 
 console.log(" ");
 
+// Test for upper case-only strings
 const countLettersObj2 = countLetters("Lighthouse in The House");
 
 assertEqual(countLettersObj2["h"], 4);
@@ -85,11 +45,3 @@ assertEqual(countLettersObj2["T"], 1);
 
 console.log(countLetters("lighthouse in the house"));
 console.log(countLetters("Lighthouse in The House"));
-/* assertEqual(countLettersObj2["i"], 2);
-assertEqual(countLettersObj2["h"], 3);
-assertEqual(countLettersObj2["H"], 1);
-assertEqual(countLettersObj2["a"], 1);
-assertEqual(countLettersObj2["w"], undefined);
-assertEqual(countLettersObj2["o"], 1);
-assertEqual(countLettersObj2["L"], 1);
-assertEqual(countLettersObj2["T"], 1); */
