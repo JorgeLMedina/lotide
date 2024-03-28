@@ -77,6 +77,7 @@ assertEqual(countLettersObj["i"], 2);
 assertEqual(countLettersObj["a"], 1);
 assertEqual(countLettersObj["w"], undefined);
 assertEqual(countLettersObj["o"], 1);
+
 /* assertEqual(countLettersObj2["i"], 2);
 assertEqual(countLettersObj2["h"], 3);
 assertEqual(countLettersObj2["H"], 1);
