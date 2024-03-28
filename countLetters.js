@@ -51,11 +51,12 @@ const assertEqual = function (actual, expected) {
 const countLetters = function (string) {
   const count = {};
   for (const letter of string) {
-    let letterLow = letter.toLowerCase();
-    if (count[letterLow]) {
-      count[letterLow] += 1;
-    } else {
-      count[letterLow] = 1;
+    if (letter !== " ") {
+      if (count[letter]) {
+        count[letter] += 1;
+      } else {
+        count[letter] = 1;
+      }
     }
   }
   return count;
@@ -70,14 +71,20 @@ assertEqual(countLettersObj["a"], 1);
 assertEqual(countLettersObj["w"], undefined);
 assertEqual(countLettersObj["o"], 1);
 
+console.log(" ");
+
 const countLettersObj2 = countLetters("Lighthouse in The House");
 
-assertEqual(countLettersObj["h"], 4);
-assertEqual(countLettersObj["i"], 2);
-assertEqual(countLettersObj["a"], 1);
-assertEqual(countLettersObj["w"], undefined);
-assertEqual(countLettersObj["o"], 1);
+assertEqual(countLettersObj2["h"], 4);
+assertEqual(countLettersObj2["i"], 2);
+assertEqual(countLettersObj2["a"], 1);
+assertEqual(countLettersObj2["w"], undefined);
+assertEqual(countLettersObj2["o"], 1);
+assertEqual(countLettersObj2["H"], 1);
+assertEqual(countLettersObj2["T"], 1);
 
+console.log(countLetters("lighthouse in the house"));
+console.log(countLetters("Lighthouse in The House"));
 /* assertEqual(countLettersObj2["i"], 2);
 assertEqual(countLettersObj2["h"], 3);
 assertEqual(countLettersObj2["H"], 1);
