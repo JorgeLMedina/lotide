@@ -10,13 +10,7 @@ const assertEqual = function (actual, expected) {
 // Function reports back how many instances of each string were found in a given string array
 const countOnly = function (allItems, itemsToCount) {
   const results = {};
-  // let count = 0;
   for (const item of allItems) {
-    // if (!results[item] && itemsToCount[item]) {
-    //   results[item] = 1;
-    // } else if (results[item]) {
-    //   results[item] += 1;
-    // }
     if (itemsToCount[item]) {
       if (results[item]) {
         results[item] += 1;
