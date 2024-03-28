@@ -34,7 +34,8 @@ const letterPositions = function (sentence) {
   return results;
 };
 
-assertArraysEqual(letterPositions("lighthouse in the house").i, [1, 11]);
-assertArraysEqual(letterPositions("lighthouse in the house").e, [9, 16, 22]);
-assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]);
-assertArraysEqual(letterPositions("lighthouse in the house").n, [12]);
+const result = letterPositions("lighthouse in the house");
+assertArraysEqual(result.i, [1, 11]);
+assertArraysEqual(result.e, [9, 16, 22]);
+assertArraysEqual(result.h, [3, 5, 15, 18]);
+assertArraysEqual(result.n, [12]);
