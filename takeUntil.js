@@ -26,12 +26,13 @@ const assertArraysEqual = function (arr1, arr2) {
 const takeUntil = function (array, callback) {
   const newArray = [];
   for (let item of array) {
-    if (callback(item) === true) {
+    if (callback(item)) {
       return newArray;
     } else {
       newArray.push(item);
     }
   }
+  return newArray;
 };
 
 // Test cases
