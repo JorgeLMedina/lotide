@@ -32,7 +32,9 @@ const eqObjects = function (object1, object2) {
   }
   let countTrue = 0;
   for (const element of keys1) {
-    if (object1[element] === object2[element]) {
+    if (Array.isArray(object1[element]) && Array.isArray(object2[element])) {
+      return eqArrays(object1, object2);
+    } else if (object1[element] === object2[element]) {
       countTrue++;
     }
   }
@@ -51,7 +53,6 @@ const anotherShirtObject = {
   size: "medium",
   color: "red"
 };
-eqObjects(shirtObject, anotherShirtObject);
 assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 
 const longSleeveShirtObject = {
@@ -59,7 +60,6 @@ const longSleeveShirtObject = {
   color: "red",
   sleeveLength: "long"
 };
-eqObjects(shirtObject, longSleeveShirtObject);
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
 
 // Test 02
