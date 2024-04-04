@@ -6,24 +6,38 @@ const assertEqual = function (actual, expected) {
   }
 };
 
+const eqArrays = function (arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  let checker = 0;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      checker++;
+    }
+  };
+  if (checker === 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const eqObjects = function (object1, object2) {
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
-  const values1 = Object.values(object1);
-  const values2 = Object.values(object2);
 
   if (keys1.length !== keys2.length) {
     return false;
   }
+  let countTrue = 0;
   for (const element of keys1) {
-    if (!keys2.includes(element)) {
-      return false;
+    if (object1[element] === object2[element]) {
+      countTrue++;
     }
   }
-  for (const element of values1) {
-    if (!values2.includes(element)) {
-      return false;
-    }
+  if (countTrue < keys1.length) {
+    return false;
   }
   return true;
 };
@@ -49,7 +63,7 @@ eqObjects(shirtObject, longSleeveShirtObject);
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
 
 // Test 02
-/* console.log(`
+console.log(`
 ---------------------------------------
 `);
 
@@ -63,4 +77,3 @@ const longSleeveMultiColorShirtObject = {
   sleeveLength: "long",
 };
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false); // => false
- */
