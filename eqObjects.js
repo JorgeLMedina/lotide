@@ -50,31 +50,6 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
-/* const eqObjects = function (object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-  let countTrue = 0;
-  for (const element of keys1) {
-    if (Array.isArray(object1[element]) && Array.isArray(object2[element])) {
-      if (eqArrays(object1[element], object2[element]) === true) {
-        countTrue++;
-      } else {
-        return false;
-      }
-    } else if (object1[element] === object2[element]) {
-      countTrue++;
-    }
-  }
-  if (countTrue < keys1.length) {
-    return false;
-  }
-  return true;
-}; */
-
 // Test 01
 const shirtObject = {
   color: "red",
