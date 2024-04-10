@@ -19,7 +19,7 @@ const emptyTail = tail(empty);
 assertEqual(wordsTail.length, 2);
 assertEqual(wordsTail[0], "Lighthouse");
 assertEqual(wordsTail[1], "Labs");
-assertEqual(tail(nemptyTailone)[0], undefined);
+assertEqual(tail(none)[0], undefined);
 assertEqual(emptyTail[0], undefined);
 assertEqual(emptyTail.length, 0);
 assertEqual(words.length, 3);
