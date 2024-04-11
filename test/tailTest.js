@@ -1,25 +1,16 @@
-const assertEqual = require("../assertEqual");
+const assert = require("chai").assert;
 const tail = require("../tail");
 
-// Test cases:
-const una = [1, 2, 3, 4, 5];
-console.log(tail(una));
-console.log(una);
+describe("#tail", () => {
+  it('returns ["Lighthouse", "Labs"] for ["Yo Yo", "Lighthouse", "Labs"]', () => {
+    assert.deepStrictEqual(tail(["Yo Yo", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"])
+  });
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-const none = [];
-const empty = [1];
-console.log(tail(empty));
+  it('returns [] for []', () => {
+    assert.deepStrictEqual(tail([]), [])
+  });
 
-const wordsTail = tail(words);
-const emptyTail = tail(empty);
-
-assertEqual(wordsTail.length, 2);
-assertEqual(wordsTail[0], "Lighthouse");
-assertEqual(wordsTail[1], "Labs");
-assertEqual(tail(none)[0], undefined);
-assertEqual(emptyTail[0], undefined);
-assertEqual(emptyTail.length, 0);
-assertEqual(words.length, 3);
+  it('returns [] for ["Yo Yo"]', () => {
+    assert.deepStrictEqual(tail(["Yo Yo"]), [])
+  });
+});
