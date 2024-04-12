@@ -1,4 +1,4 @@
-const eqArrays = function (arr1, arr2) {
+/* const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -35,7 +35,8 @@ const eqObjects = function (object1, object2) {
     return false;
   }
   return true;
-};
+}; */
+const eqObjects = require("./eqObjects");
 
 const assertObjectsEqual = function (actual, expected) {
   const inspect = require("util").inspect;
@@ -48,19 +49,4 @@ const assertObjectsEqual = function (actual, expected) {
   }
 };
 
-// Test 01
-const shirtObject = {
-  color: "red",
-  size: "medium"
-};
-const anotherShirtObject = {
-  size: "medium",
-  color: "red"
-};
-const longSleeveShirtObject = {
-  size: "medium",
-  color: "red",
-  sleeveLength: "long"
-};
-
-assertObjectsEqual(shirtObject, anotherShirtObject);
+module.exports = assertObjectsEqual;
