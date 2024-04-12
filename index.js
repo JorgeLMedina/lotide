@@ -7,6 +7,7 @@ const eqArrays = require('./eqArrays');
 const eqObjects = require('./eqObjects');
 const findKey = require('./findKey');
 const findKeyByValue = require('./findKeyByValue');
+const flatten = require('./flatten');
 const head = require('./head');
 const letterPositions = require('./letterPositions');
 const middle = require('./middle');
@@ -23,6 +24,7 @@ module.exports = {
   eqArrays: eqArrays,
   eqObjects: eqObjects,
   findKey: findKey,
+  flatten: flatten,
   findKeyByValue: findKeyByValue,
   head: head,
   letterPositions: letterPositions,
